@@ -3,6 +3,22 @@
 [![Fuzzing Status](https://oss-fuzz-build-logs.storage.googleapis.com/badges/suricata.svg)](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&can=1&q=proj:suricata)
 [![codecov](https://codecov.io/gh/OISF/suricata/branch/master/graph/badge.svg?token=QRyyn2BSo1)](https://codecov.io/gh/OISF/suricata)
 
+## 安装
+需要先安装依赖
+```
+vi /etc/yum.repos.d/Rocky-Devel.repo
+	改 enabled=0  为 enabled=1
+
+yum install libpcap libpcap-devel libtool pcre-devel libyaml-devel jansson-devel rustc cargo epel-release lz4-devel file-devel
+解压安装包
+  tar xzvf suricata.tar.gz
+  cd suricata
+  git clone https://github.com/OISF/libhtp
+  ./autogen.sh
+  ./configure
+  make
+  make install
+```
 ## Introduction
 
 [Suricata](https://suricata.io) is a network IDS, IPS and NSM engine
